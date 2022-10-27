@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setTheme } from './themeSlice'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
 //import styles from './Counter.module.css'
 
 export function Theme(props) {
@@ -29,7 +31,7 @@ export function Theme(props) {
 
       <button className={`btn btn-outline-secondary ${thisTheme}`}
         onClick={()=>{handleClick()}}>
-          💡 
+          <FontAwesomeIcon icon={faLightbulb} /> 
       </button>
      
     </>

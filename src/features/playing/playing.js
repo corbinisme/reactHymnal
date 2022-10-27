@@ -1,7 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setPlayingPiano, setPlayingVocal } from './playingSlice'
-//import styles from './Counter.module.css'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMusic } from '@fortawesome/free-solid-svg-icons'
+import { faUsers } from '@fortawesome/free-solid-svg-icons'
+
 
 export function Playing(props) {
   const isPlayingPiano= useSelector((state) => state.playing.piano)
@@ -31,12 +35,12 @@ export function Playing(props) {
 
       <button className={`btn btn-outline-secondary ${(isPlayingPiano==true? "active":"")}`}
         onClick={()=>{handleClick("piano")}}>
-        🎵 
+        <FontAwesomeIcon icon={faMusic} /> 
       </button>
 
       <button className={`btn btn-outline-secondary ${(isPlayingVocal==true? "active":"")}`}
         onClick={()=>{handleClick("vocal")}}>
-        🎵 
+        <FontAwesomeIcon icon={faUsers} /> 
       </button>
      
     </>

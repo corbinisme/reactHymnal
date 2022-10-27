@@ -4,6 +4,7 @@ import {Theme} from "../features/theme/theme"
 import Music from "./Music";
 import { Playing } from "../features/playing/playing";
 
+
 import { useSelector, useDispatch } from 'react-redux'
 
 import React, { useState, useEffect } from 'react';
@@ -14,7 +15,7 @@ function Footer(props){
 
 
     return (
-        <footer className="footer">
+        <footer className="footer p-2">
             <div className="row">
                 <div className="col">
                     <div className="btn-group">

@@ -3,6 +3,7 @@
   --background-color: white;
   --text-color: black;  
   --footer-bg-grad-stop: #eee;
+  --navbarBG: "url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 0.55%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e)";
 }
 
 .App[data-theme="dark"] {
@@ -10,6 +11,7 @@
   --background-color: black;
   --text-color: white;   
   --footer-bg-grad-stop: #111;
+  --navbarBG: "url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%255, 255, 255, 0.55%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e)";
 }
 
 
@@ -33,12 +35,25 @@
 .App .page header .navbar .navbar-brand {
   color: var(--text-color);
 }
+.App .page .form-control,
 .App .page .hymnSelection select {
   background-color: var(--background-color);
   color: var(--text-color);
 }
+.App .navbar-toggler {
+  border-color:  var(--text-color);
+  padding-top: 0;
+  padding-bottom: 0;
+
+}
 .App .navbar-toggler-icon {
   color: var(--text-color);
+  background-image: var(--navbarBG);
+  font-size: 26px;
+  height: 34px;
+  line-height: 26px;
+  width: 26px;
+
 }
 .App .page footer {
   

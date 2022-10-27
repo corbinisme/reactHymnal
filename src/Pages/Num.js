@@ -1,13 +1,15 @@
-import React from 'react'
+import {React, useRef, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment, incrementHymn } from '../features/hymn/hymnSlice'
 
 function Num(props){
 
-    let active = props.activepage;
-    let back = props.handlePage;
+    const searchInput = useRef(null);
+    const active = props.activepage;
+    const back = props.handlePage;
     const hymnNum= useSelector((state) => state.hymn.value);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    //ref.current.focus();
 
     const handleChange = event => {
         //console.log('Label 👉️', event.target.selectedOptions[0].label);
@@ -24,6 +26,15 @@ function Num(props){
         back("home");
       };
 
+
+      useEffect(()=>{
+        // current property is refered to input element
+        if(active=="num"){
+          searchInput.current.focus();
+          console.log("num page454")
+        }
+     },[active])
+
     return <>
     
     {(active=="num"?
@@ -32,12 +43,14 @@ function Num(props){
         <h2>Search by Number</h2> 
         <a href="#" onClick={()=>back("home")}>Back</a>
         <hr />
+        <form onSubmit={handleSubmit}>
         <div className="input-group mt-4">
-            <form onSubmit={handleSubmit}>
-            <input type="number" name="number" placeholder={hymnNum} className="form-control" />
+            
+            <input type="number" name="number" ref={searchInput} placeholder={hymnNum} className="form-control" />
             <input type="submit" value="Go" className="input-group-addon btn btn-primary" />
-            </form>
+           
         </div>
+        </form>
         </div>
 
     </div>

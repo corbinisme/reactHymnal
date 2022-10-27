@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Hymn } from '../features/hymn/hymn';
 import HymnSelect from "./HymnSelect";
 import { Language } from '../features/language/language';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 function Header(props) {
 
@@ -54,16 +56,18 @@ function Header(props) {
                     <ul className="navbar-nav me-auto">
                         <li className="nav-item">
                             <a className="nav-link2 btn btn-outline-secondary search-button" 
-                            onClick={()=>back("search")}
-                            href="#" tabIndex="-1" aria-disabled="true">
-                               
-                            &#128269;
-                                </a>
+                                onClick={()=>back("search")}
+                                href="#" tabIndex="-1" aria-disabled="true">
+                               <FontAwesomeIcon icon={faSearch} />
+
+                            </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link2 btn btn-outline-secondary" 
-                            onClick={()=>back("num")}
-                            href="#" tabIndex="-1" aria-disabled="true">#</a>
+                                onClick={()=>back("num")}
+                                href="#" tabIndex="-1" aria-disabled="true">
+                                #
+                            </a>
                         </li>
                     </ul>
                     
