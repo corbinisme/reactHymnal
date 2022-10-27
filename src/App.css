@@ -1,38 +1,193 @@
+:root {
+  /* Variables for default theme (light-mode) */
+  --background-color: white;
+  --text-color: black;  
+  --footer-bg-grad-stop: #eee;
+}
+
+.App[data-theme="dark"] {
+  /* Variables for dark mode */
+  --background-color: black;
+  --text-color: white;   
+  --footer-bg-grad-stop: #111;
+}
+
+
 .App {
-  text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all ease 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .page.home main {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.App .page header .navbar {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.App .page header .navbar li a {
+  color: var(--text-color);
+}
+.App .page header .navbar .navbar-brand {
+  color: var(--text-color);
+}
+.App .page .hymnSelection select {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.App .navbar-toggler-icon {
+  color: var(--text-color);
+}
+.App .page footer {
+  
+  color: var(--text-color);
+}
+.App header .navbar-nav .nav-item {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.App .page footer {
+  background: -moz-linear-gradient(top,rgba(255,255,255,0.46) 0,rgba(255,255,255,0.91) 60%,rgba(255,255,255,0.91) 97%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(255,255,255,0.46)),color-stop(60%,rgba(255,255,255,0.91)),color-stop(97%,rgba(255,255,255,0.91)));
+    background: -webkit-linear-gradient(top,rgba(255,255,255,0.46) 0,rgba(255,255,255,0.91) 60%,rgba(255,255,255,0.91) 97%);
+    background: -o-linear-gradient(top,rgba(255,255,255,0.46) 0,rgba(255,255,255,0.91) 60%,rgba(255,255,255,0.91) 97%);
+    background: -ms-linear-gradient(top,rgba(255,255,255,0.46) 0,rgba(255,255,255,0.91) 60%,rgba(255,255,255,0.91) 97%);
+    background: linear-gradient(to bottom,rgba(255,255,255,0.46) 0,rgba(255,255,255,0.91) 60%,rgba(255,255,255,0.91) 97%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#75ffffff',endColorstr='#e8ffffff',GradientType=0);
+
+}
+.App[data-theme="dark"] .page footer {
+  background: #222;
+    background: -moz-linear-gradient(top,rgba(000,000,000,0.46) 0,rgba(000,000,000,0.91) 60%,rgba(000,000,000,0.91) 97%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(000,000,000,0.46)),color-stop(60%,rgba(000,000,000,0.91)),color-stop(97%,rgba(000,000,000,0.91)));
+    background: -webkit-linear-gradient(top,rgba(000,000,000,0.46) 0,rgba(000,000,000,0.91) 60%,rgba(000,000,000,0.91) 97%);
+    background: -o-linear-gradient(top,rgba(000,000,000,0.46) 0,rgba(000,000,000,0.91) 60%,rgba(000,000,000,0.91) 97%);
+    background: -ms-linear-gradient(top,rgba(000,000,000,0.46) 0,rgba(000,000,000,0.91) 60%,rgba(000,000,000,0.91) 97%);
+    background: linear-gradient(to bottom,rgba(000,000,000,0.46) 0,rgba(000,000,000,0.91) 60%,rgba(000,000,000,0.91) 97%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#75000000',endColorstr='#e8000000',GradientType=0);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page {
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.home {
+  display: block
+}
+.home header .form-control {
+  appearance: auto;
+}
+.home header .actionItems .navbar-nav {
+  flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+.home header .navbar-collapse ul {
+  margin-bottom: 0;
+}
+.home header .navbar-collapse ul li {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5em 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.home header {
+  height: 100px;
+  position: fixed;
+  width: 100%;
+}
+.home main {
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+.home main h1 {
+  display: none;
+}
+.home footer {
+  position: fixed;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+
+}
+
+.lyrics {
+  padding: 1em;
+}
+.lyrics ul {
+  padding-left: 2em;
+}
+.lyrics li {
+  margin-bottom: 0.8em;
+
+}
+
+.font_1 {
+  font-size: 0.6em;
+}
+.font_2 {
+  font-size: 0.8em;
+}
+.font_3 {
+  font-size: 1em;
+}
+.font_4 {
+  font-size: 1.2rem;
+}
+.font_5 {
+  font-size: 1.4em;
+}
+.font_6 {
+  font-size: 1.6em;
+}
+.font_7 {
+  font-size: 1.8em;
+}
+.font_8 {
+  font-size: 2em;
+}
+.font_9 {
+  font-size: 2.2em;
+}
+.font_10 {
+  font-size: 2.4em;
+}
+.font_11 {
+  font-size: 2.6em;
+}
+.font_12 {
+  font-size: 2.8em;
+}
+.font_13 {
+  font-size: 3em;
+}
+.font_14 {
+  font-size: 3.2em;
+}
+
+
+.player-wrapper {
+  position: relative;
+  width: calc(100% - 40px);
+  height: 100%;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+
+@media all and (max-width: 1003px){
+  .home header .navbar-collapse {
+    position: absolute;
+    top: 56px;
+    background: #fff;
+    z-index: 6;
+    width: 100%;
+    left: 0;
+  
   }
 }
