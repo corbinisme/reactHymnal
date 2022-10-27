@@ -40,6 +40,17 @@
   background-color: var(--background-color);
   color: var(--text-color);
 }
+.App .page.search {
+  overflow: auto;
+}
+.App .page.search .table {
+  color: var(--text-color);
+}
+
+.App .dataTable a {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
 .App .navbar-toggler {
   border-color:  var(--text-color);
   padding-top: 0;

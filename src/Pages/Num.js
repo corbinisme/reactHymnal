@@ -15,7 +15,6 @@ function Num(props){
         //console.log('Label 👉️', event.target.selectedOptions[0].label);
       
         let numb = event.target.value;
-        console.log("num", numb)
         dispatch(incrementHymn(numb))
       };
 
@@ -40,8 +39,17 @@ function Num(props){
     {(active=="num"?
     <div className="page num">
         <div className="p-4">
-        <h2>Search by Number</h2> 
-        <a href="#" onClick={()=>back("home")}>Back</a>
+
+        <div className="row">
+              <div className="col">
+                <h2>Search by Number</h2> 
+              </div>
+              <div className="col">
+                <a href="#" onClick={()=>back("home")}>Back</a>
+              </div>
+          </div>
+        
+        
         <hr />
         <form onSubmit={handleSubmit}>
         <div className="input-group mt-4">

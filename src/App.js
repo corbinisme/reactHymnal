@@ -41,7 +41,7 @@ function App() {
       handleMenu={handleMenu} 
       menuOpen={menuOpen} 
       />
-      <Search activepage={activePage} handlePage={handlePage}  />
+      <Search activepage={activePage} handlePage={handlePage} lyrics={lyrics}   />
       <Num activepage={activePage} handlePage={handlePage}  />
     </div>
   );
