@@ -9,7 +9,6 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 function Header(props) {
 
     const config = props.configuration;
-
     const updateLang = props.updateLang;
     const langs = config.langs.split(",");
     const lyrics = props.lyrics;
@@ -27,7 +26,7 @@ function Header(props) {
 
     return(
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light ">
+            <nav className="navbar  navbar-light ">
                 <div className="container-fluid">
 
                 <button 
@@ -47,7 +46,7 @@ function Header(props) {
                 <div className={`collapse navbar-collapse ${menuOpenClass}`} id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto">
 
-                        <Language handleMenu={handleMenu} langs={langs} />
+                        <Language handleMenu={handleMenu} config={config} langs={langs} />
 
                     </ul>
                 
@@ -75,7 +74,7 @@ function Header(props) {
             </div>
             </nav>
 
-            <div className="hymnSelection bg-dark text-white">
+            <div className="hymnSelection">
 
                <Hymn configuration={config} lang={props.lang} lyrics={props.lyrics} />
                

@@ -8,7 +8,7 @@ export function Language(props) {
   const dispatch = useDispatch()
   const handleMenu = props.handleMenu;
   const langs = props.langs;
-
+  const config = props.config;
 
   const handleChange = function(e) {
     //console.log('Label 👉️', event.target.selectedOptions[0].label);
@@ -26,7 +26,8 @@ export function Language(props) {
             return(
                 <li className="nav-item" key={item}>
                     <a className={`nav-link ${activeClass}`} onClick={()=>{handleChange(item); handleMenu()}} data-val={item}  href="#">
-                        {item.toUpperCase()}
+
+                        {config.langNames[item]}
                     </a>
                 </li>
             )

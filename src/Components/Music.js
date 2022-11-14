@@ -21,19 +21,21 @@ function Music(props){
     }
     const loadPath = mp3path + hymnDigit + ".mp3";
 
+    
+
     return (<div className='player-wrapper d-flex'>
         
             {((isPlayingPiano==true||isPlayingVocal==true)?
             <>
-            <ReactPlayer
-                url={loadPath}
-                width="100%"
-                height="100%"
-                className='react-player'
-                playing={false}
-                controls={true}
+            <AudioPlayer
+                autoPlay
+                src={loadPath}
+                onPlay={e => console.log("onPlay")}
+                onPlayError={e => console.log("error", e)}
+                // other props here
             />
-            {loadPath}
+
+       
             </>
             :"")}
         

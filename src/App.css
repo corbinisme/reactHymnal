@@ -111,12 +111,49 @@
   flex-direction: row;
 }
 
+.home header .navbar-collapse.show {
+  position: absolute;
+    width: 100%;
+    top: 56px;
+    left: 0;
+}
 .home header .navbar-collapse ul {
   margin-bottom: 0;
 }
 .home header .navbar-collapse ul li {
   border-bottom: 1px solid #ddd;
   padding: 0.5em 1em;
+}
+
+.home .rhap_progress-section {
+  position: fixed;
+  top: 88px;
+  left: 0;
+  width: 100%;
+}
+.home .rhap_container {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+.home .rhap_current-time, .home .rhap_total-time {
+  display: none;
+}
+.home .rhap_volume-controls {
+  display: none;
+}
+.home .rhap_progress-container {
+  margin: 0;
+}
+.home .rhap_stacked .rhap_controls-section {
+  margin-top: 0;
+  display: block;
+}
+.home .rhap_additional-controls {
+  display: none;
+}
+.home .rhap_progress-indicator {
+  visibility: hidden;
 }
 
 .home header {
