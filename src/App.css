@@ -63,12 +63,22 @@
 .App .page.search .table {
   color: var(--text-color);
 }
-.App .search .topHeader {
+
+.App .page.search header {
+  position: static;
+  height: 120px;
+}
+.App .page.search .pageContent {
+  height:calc(100vh - 120px);
+  overflow: auto;
+  margin: 0;
+}
+.App .page .topHeader {
   border-bottom: 1px dashed var(--background-color);
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
 }
-.App .search header {
+.App .page header {
   position: fixed;
   width: 100%;
   top: 0;
@@ -77,8 +87,8 @@
   padding: 1em;
   padding-bottom: 0;
 }
-.App .search .pageContent {
-  margin-top: 100px;
+.App .page .pageContent {
+  margin-top: 120px;
 }
 
 .App .dataTable a {
@@ -109,9 +119,7 @@
   background-color: var(--background-color);
   color: var(--text-color);
 }
-.App header .navbar-nav .nav-item {
-  background-color: transparent;
-}
+
 .App .navbar-collapse {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -156,16 +164,39 @@
 .home header .navbar-collapse.show {
   position: absolute;
     width: 100%;
-    top: 101px;
+    top: 57px;
     left: 0;
     z-index: 9;
+    padding: 0.5em;
+    background: var(--headerBG);
 }
 .home header .navbar-collapse ul {
   margin-bottom: 0;
 }
 .home header .navbar-collapse ul li {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--headerBG);
   padding: 0.5em 1em;
+}
+.home header .navbar-collapse ul li.active a {
+  font-weight: bold;
+}
+.home header .navbar-collapse ul li.active a span {
+  display: inline-block;
+  border-bottom: 2px solid var(--text-color);
+}
+.home .navbar-collapse ul li:nth-child(1) {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.home .navbar-collapse ul li:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.home header .navbar-collapse ul li {
+  background: var(--background-color);
+}
+.home header .navbar-collapse ul li:hover {
+  opacity: 0.7;
 }
 
 .home .rhap_progress-bar-show-download,
@@ -203,9 +234,11 @@
   visibility: hidden;
 }
 
-.home header {
+.App .page.home header {
   height: 100px;
   position: fixed;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
 }
 .home main {

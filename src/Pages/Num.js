@@ -1,6 +1,9 @@
 import {React, useRef, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment, incrementHymn } from '../features/hymn/hymnSlice'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 function Num(props){
 
@@ -40,17 +43,25 @@ function Num(props){
     <div className="page num">
         <div className="p-4">
 
-        <div className="row">
+        <header>
+                <div className="row topHeader">
               <div className="col">
-                <h2>Search by Number</h2> 
+                <h2>Number</h2> 
               </div>
+              
               <div className="col">
-                <a href="#" onClick={()=>back("home")}>Back</a>
-              </div>
+                        
+                        <a href="#" 
+                            className="btn btn-outline-secondary float-end" 
+                            onClick={()=>back("home")}>
+                                <FontAwesomeIcon icon={faArrowLeft} /> 
+                            </a>
+                        </div>
           </div>
         
+        </header>
+        <div className="pageContent">
         
-        <hr />
         <form onSubmit={handleSubmit}>
         <div className="input-group mt-4">
             
@@ -59,6 +70,7 @@ function Num(props){
            
         </div>
         </form>
+        </div>
         </div>
 
     </div>

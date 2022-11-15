@@ -8,6 +8,7 @@ import config from './Data/config';
 import 'bootstrap/dist/css/bootstrap.css';
 import languages from './Data/lang';
 import { useSelector, useDispatch } from 'react-redux'
+import bible from "./Data/Scriptures";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
   const fontsize = useSelector((state) => state.fontsize.value)
   
+  console.log("bible", bible)
 
 
   return (

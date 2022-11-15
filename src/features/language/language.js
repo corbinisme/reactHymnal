@@ -4,7 +4,7 @@ import { setLanguage } from './languageSlice'
 //import styles from './Counter.module.css'
 
 export function Language(props) {
-  const hymnNum= useSelector((state) => state.language.value)
+  const currentLang= useSelector((state) => state.language.value)
   const dispatch = useDispatch()
   const handleMenu = props.handleMenu;
   const langs = props.langs;
@@ -21,13 +21,13 @@ export function Language(props) {
   return (
     <>
        {langs && langs.map(item=>{
-            const activeClass = (item==props.lang? "active":"");
+            const activeClass = (item==currentLang? "active":"");
 
             return(
-                <li className="nav-item" key={item}>
+                <li className={`nav-item ${activeClass}`} key={item}>
                     <a className={`nav-link ${activeClass}`} onClick={()=>{handleChange(item); handleMenu()}} data-val={item}  href="#">
 
-                        {config.langNames[item]}
+                        <span>{config.langNames[item]}</span>
                     </a>
                 </li>
             )
