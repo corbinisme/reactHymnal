@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import DataTable from 'react-data-table-component';
 import { decrement, increment, incrementHymn } from '../features/hymn/hymnSlice'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 function Search(props){
 
@@ -77,34 +79,35 @@ function Search(props){
         
         <div className="p-4">
             <header>
-                <div className="row">
+                <div className="row topHeader">
                     <div className="col">
                         <h2>Search by Title</h2> 
                     </div>
-                    <div className="col float-right text-right pull-right">
+                    <div className="col">
                         
-                        <a href="#" onClick={()=>back("home")}>Back</a>
+                    <a href="#" 
+                        className="btn btn-outline-secondary float-end" 
+                        onClick={()=>back("home")}>
+                            <FontAwesomeIcon icon={faArrowLeft} /> 
+                        </a>
                     </div>
                 </div>
                 
                 
             
-    <div className="input-group">
-        <input type="text" 
-                onChange={handleFilter}
-                value={filterText} 
-                className="form-control" 
-                name="searchtitles" />
-        <button className="input-group-addon btn btn-primary">
-            X
-        </button>
-    </div>
-    <hr />
-                
-               
+                <div className="input-group">
+                    <input type="text" 
+                            onChange={handleFilter}
+                            value={filterText} 
+                            className="form-control" 
+                            name="searchtitles" />
+                    <button className="input-group-addon btn btn-outline-secondary">
+                        <FontAwesomeIcon icon={faTimes} /> 
+                    </button>
+                </div>
             </header>
         
-     
+        <div className="pageContent">
 
         <table className='dataTable table table-bordered'>
             <tbody>
@@ -124,6 +127,7 @@ function Search(props){
         }): <tr><td>No results</td></tr>)}
         </tbody>
         </table>
+        </div>
         </div>
     </div>
      : <></>)}

@@ -52,23 +52,22 @@ function Header(props) {
                 
                 </div>
                 <div className="d-flex actionItems">
-                    <ul className="navbar-nav me-auto">
-                        <li className="nav-item">
-                            <a className="nav-link2 btn btn-outline-secondary search-button" 
+
+                    <div className="btn-group">
+                        <a className="nav-link2 btn btn-outline-secondary search-button" 
                                 onClick={()=>back("search")}
                                 href="#" tabIndex="-1" aria-disabled="true">
                                <FontAwesomeIcon icon={faSearch} />
 
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link2 btn btn-outline-secondary" 
+                        </a>
+                        <a className="nav-link2 btn btn-outline-secondary" 
                                 onClick={()=>back("num")}
                                 href="#" tabIndex="-1" aria-disabled="true">
                                 #
                             </a>
-                        </li>
-                    </ul>
+                    </div>
+
+                    
                     
                 </div>
             </div>

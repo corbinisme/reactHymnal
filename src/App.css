@@ -4,6 +4,10 @@
   --text-color: black;  
   --footer-bg-grad-stop: #eee;
   --navbarBG: "url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 0.55%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e)";
+  --hymnSelectBGStart: #6facd5;
+  --hymnSelectBGStop: #497bae;
+  --headerBG: #eee;
+  --headerBorder: #122e4a;
 }
 
 .App[data-theme="dark"] {
@@ -12,8 +16,15 @@
   --text-color: white;   
   --footer-bg-grad-stop: #111;
   --navbarBG: "url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%255, 255, 255, 0.55%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e)";
+  --hymnSelectBGStart: #333;
+  --hymnSelectBGStop: #333;
+  --headerBG: #222;
+  --headerBorder: #000;
 }
 
+.App .btn {
+  background-color: var(--background-color);
+}
 
 .App {
   background-color: var(--background-color);
@@ -25,15 +36,21 @@
   background-color: var(--background-color);
   color: var(--text-color);
 }
-.App .page header .navbar {
-  background-color: var(--background-color);
+
+.App .navbar {
+  background-color: var(--headerBG);
   color: var(--text-color);
+  border-bottom: 1px solid var(--headerBorder);
 }
 .App .page header .navbar li a {
   color: var(--text-color);
 }
 .App .page header .navbar .navbar-brand {
   color: var(--text-color);
+}
+.App .page .hymnSelection {
+  background-image: linear-gradient(var(--hymnSelectBGStart),var(--hymnSelectBGStop));
+  border-bottom: 1px solid var(--headerBorder);
 }
 .App .page .form-control,
 .App .page .hymnSelection select {
@@ -46,11 +63,29 @@
 .App .page.search .table {
   color: var(--text-color);
 }
+.App .search .topHeader {
+  border-bottom: 1px dashed var(--background-color);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+.App .search header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--headerBG);
+  padding: 1em;
+  padding-bottom: 0;
+}
+.App .search .pageContent {
+  margin-top: 100px;
+}
 
 .App .dataTable a {
   background-color: var(--background-color);
   color: var(--text-color);
 }
+
 .App .navbar-toggler {
   border-color:  var(--text-color);
   padding-top: 0;
@@ -71,6 +106,13 @@
   color: var(--text-color);
 }
 .App header .navbar-nav .nav-item {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.App header .navbar-nav .nav-item {
+  background-color: transparent;
+}
+.App .navbar-collapse {
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -114,8 +156,9 @@
 .home header .navbar-collapse.show {
   position: absolute;
     width: 100%;
-    top: 56px;
+    top: 101px;
     left: 0;
+    z-index: 9;
 }
 .home header .navbar-collapse ul {
   margin-bottom: 0;
@@ -125,9 +168,13 @@
   padding: 0.5em 1em;
 }
 
+.home .rhap_progress-bar-show-download,
+.home .rhap_download-progress {
+  background: transparent;
+}
 .home .rhap_progress-section {
   position: fixed;
-  top: 88px;
+  top: 103px;
   left: 0;
   width: 100%;
 }
@@ -243,14 +290,3 @@
   left: 40px;
 }
 
-@media all and (max-width: 1003px){
-  .home header .navbar-collapse {
-    position: absolute;
-    top: 56px;
-    background: #fff;
-    z-index: 6;
-    width: 100%;
-    left: 0;
-  
-  }
-}
