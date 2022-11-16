@@ -19,7 +19,11 @@ function SearchList(props){
 
             <table className='dataTable table table-bordered'>
             <tbody>
-                {(props.searchType=="scripture"? <>scripture list</>: <>
+                {(props.searchType=="scripture"? <>
+                    <tr>
+                        <td>scripture list</td>
+                    </tr>
+                </>: <>
                     {(props.data.length>0? props.data.map((ly)=>{
                         
                         return (

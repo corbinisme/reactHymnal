@@ -65,10 +65,21 @@ const bible = {bookNames: ["Genesis",
         "Revelation",
     ],
     hymns: {
-        1: {book: 19, chapter: 1, verse: "1-6"}
+        1: [
+          {verses:"1:1-21", hymns:[110,135,145,178]},
+          {verses:"2:1-3", hymns:[111,135]},
+
+        ]
     }
 
 }
+Object.keys(bible.hymns).forEach(function(index){
+    console.log("bible", bible.bookNames[index-1]);
+    bible.hymns[index].forEach(function(row){
+        console.log("row", row)
+    })
+});
 
-console.log(bible.bookNames[bible.hymns[1].book - 1]);
+
+
 export default bible;

@@ -20,7 +20,7 @@ function Search(props){
     const searchTypes = ["title", "text", "scripture"]
     const [searchType, setSearchType] = useState("title");
 
-    const [filterText, setFilterText] = useState('');
+    const [filterText, setFilterText] = useState(' ');
     const [data, setData] = useState([]);
 
     const title = "Search";
@@ -64,9 +64,7 @@ function Search(props){
                     tempData.push(temp);
                 }
             } else if(searchType=="text"){
-                if(
-                    theseSearchLyrics.toLowerCase().indexOf(lowerFilter)>-1
-                ){
+
                     let highlightedSearchLyrics = theseSearchLyrics;
                     console.log("lowerFilter", lowerFilter);
                     let searchSplits = lowerFilter.split(" ");
@@ -75,14 +73,11 @@ function Search(props){
                     highlightedSearchLyrics = highlightedSearchLyrics.replaceAll(",", " ");
                     highlightedSearchLyrics = highlightedSearchLyrics.replaceAll(":", " ");
                     highlightedSearchLyrics = highlightedSearchLyrics.replaceAll("Chorus", " ");
+                   
 
-                    /*
-                    searchSplits.forEach(function(term){
-                        if(term!=""){
-                        highlightedSearchLyrics = highlightedSearchLyrics.replaceAll(term, "<mark>" + term + "</mark>");
-                        }
-                    })
-                    */
+                if( lowerFilter!="" && lowerFilter!=" " &&
+                    theseSearchLyrics.toLowerCase().indexOf(lowerFilter)>-1
+                ){
                     highlightedSearchLyrics = highlightedSearchLyrics.replaceAll(filterText, "<mark>" + filterText + "</mark>");
 
                     let temp = {
@@ -91,6 +86,21 @@ function Search(props){
                         lyrics: highlightedSearchLyrics
                     }
                     tempData.push(temp);
+                } else {
+                    if(lowerFilter=="" || lowerFilter==" "){
+    
+                        let temp = {
+                            num: num,
+                            title: title,
+                            lyrics: highlightedSearchLyrics
+                        }
+                        tempData.push(temp);
+                    
+                    } else {
+                        console.log("no match");
+                    }
+                    
+                    
                 }
             }
         })
@@ -113,6 +123,7 @@ function Search(props){
         
         let val = e.target.value;
         setSearchType(val);
+        setFilterText("")
     }
     
    
