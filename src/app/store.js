@@ -5,6 +5,7 @@ import hymnReducer from "../features/hymn/hymnSlice"
 import languageReducer from "../features/language/languageSlice"
 import themeReducer from "../features/theme/themeSlice";
 import playingReducer from "../features/playing/playingSlice"
+import pageReducer from '../features/page/pageSlice'
 
 
 export default configureStore({
@@ -14,7 +15,8 @@ export default configureStore({
     hymn: hymnReducer,
     language: languageReducer,
     theme: themeReducer,
-    playing: playingReducer
+    playing: playingReducer,
+    page: pageReducer
 
   },
 })

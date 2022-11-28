@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Pages/Home';
 import Search from './Pages/Search';
+import Copyright from './Pages/Copyright';
 import Num from './Pages/Num';
 import config from './Data/config';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -45,6 +46,7 @@ function App() {
       />
       <Search activepage={activePage} handlePage={handlePage} lyrics={lyrics}   />
       <Num activepage={activePage} handlePage={handlePage}  />
+      <Copyright activepage={activePage} handlePage={handlePage}  lyrics={lyrics}  />
     </div>
   );
 }

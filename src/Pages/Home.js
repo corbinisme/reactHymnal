@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import Lyrics from '../Components/Lyrics';
+import pageSlice from '../features/page/pageSlice';
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -14,6 +15,8 @@ export default function Home(props) {
     let active = props.activepage;
     let back = props.handlePage;
 
+    const currPage= useSelector((state) => state.page.value)
+    console.log(currPage, "page")
     return(
         <>
         {(active=="home"?

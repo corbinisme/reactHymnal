@@ -41,7 +41,11 @@ function Header(props) {
                     <span className="navbar-toggler-icon">&equiv;</span>
                 </button>
 
-                <a className="navbar-brand" href="#">{title}</a>
+                <span className="navbar-brand">
+                    {title}  
+                    <a onClick={()=>back("copyright")} className="badge badge-sm ml-2 bg-primary">?</a>
+                </span>
+                
                 
                 <div className={`collapse navbar-collapse ${menuOpenClass}`} id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto">
