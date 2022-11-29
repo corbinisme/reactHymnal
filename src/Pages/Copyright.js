@@ -33,35 +33,37 @@ function Copyright(props){
     const toggle = tab => {
         if (activeTab !== tab) setActiveTab(tab);
       };
-    console.log("copyright",thisCopy);
+
+    const fontsize = useSelector((state) => state.fontsize.value)
+
 
     return <>
     
     {(active=="copyright"?
     <div className="page copyright">
-        <div className="p-4">
+        <div className="">
 
         <header>
-                <div className="row topHeader">
-              <div className="col">
-                <h2>Copyright</h2> 
-              </div>
-              
-              <div className="col">
-                        
-                        <Button
-                            className="btn btn-outline-secondary float-end" 
-                            onClick={()=>back("home")}>
-                                <FontAwesomeIcon icon={faArrowLeft} /> 
-                            </Button>
-                        </div>
-          </div>
-        
-        </header>
-        <div className="pageContent">
+            <div className="topHeader">
 
-        <div>
-            <Nav tabs className=" nav-pills nav-fill">
+            <nav className="navbar col  navbar-light ">
+                  <div className="container-fluid">
+                      <div className='d-flex'>
+                      <span className="navbar-brand">Number</span> 
+                      </div>
+                      <div className="d-flex actionItems">
+                        <Button
+                          className="btn btn-outline-secondary float-end" 
+                          onClick={()=>back("home")}>
+                            <FontAwesomeIcon icon={faArrowLeft} /> 
+                        </Button>
+                      </div>
+                  </div>
+              </nav>
+
+            </div>
+            <div className="bottomHeader">
+            <Nav tabs className="copyrightNav nav-pills nav-fill">
                 <NavItem>
                 <NavLink
                     className={activeTab === "1" ? "active" : ""}
@@ -93,6 +95,13 @@ function Copyright(props){
                 </NavLink>
                 </NavItem>
             </Nav>
+            </div>
+        
+        </header>
+        <div className={`pageContent font_${fontsize}`}>
+
+        <div>
+            
             <TabContent activeTab={activeTab}>
                 <TabPane tabId="1">
                 <Row>

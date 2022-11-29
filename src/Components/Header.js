@@ -5,6 +5,19 @@ import HymnSelect from "./HymnSelect";
 import { Language } from '../features/language/language';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import {
+    TabContent,
+    TabPane,
+    Nav,
+    NavItem,
+    NavLink,
+    Card,
+    Button,
+    CardTitle,
+    CardText,
+    Row,
+    Col
+  } from "reactstrap";
 
 function Header(props) {
 
@@ -26,25 +39,27 @@ function Header(props) {
 
     return(
         <header>
-            <nav className="navbar  navbar-light ">
+            <div className="topHeader">
+            <nav className="navbar">
                 <div className="container-fluid">
 
-                <button 
-                onClick={handleMenu}
-                className="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarSupportedContent" 
-                aria-controls="navbarSupportedContent" 
-                aria-expanded="false" 
-                aria-label="Toggle navigation">
+                <Button 
+                    onClick={handleMenu}
+                    className="navbar-toggler" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon">&equiv;</span>
-                </button>
+                </Button>
 
-                <span className="navbar-brand">
-                    {title}  
-                    <a onClick={()=>back("copyright")} className="badge badge-sm ml-2 bg-primary">?</a>
-                </span>
+                <div className="title">
+                    <span className="navbar-brand">
+                        {title}
+                    </span>
+                    <Button onClick={()=>back("copyright")} className="btn-outline-secondary">?</Button>
+                </div>
                 
                 
                 <div className={`collapse navbar-collapse ${menuOpenClass}`} id="navbarSupportedContent">
@@ -76,8 +91,9 @@ function Header(props) {
                 </div>
             </div>
             </nav>
+            </div>
 
-            <div className="hymnSelection">
+            <div className="hymnSelection bottomHeader">
 
                <Hymn configuration={config} lang={props.lang} lyrics={props.lyrics} />
                

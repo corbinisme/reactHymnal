@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import languages from './Data/lang';
 import { useSelector, useDispatch } from 'react-redux'
 import bible from "./Data/Scriptures";
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -37,16 +38,17 @@ function App() {
     <div className={`App ${thisTheme}`} data-theme={thisTheme}>
       
       <Home 
-      activepage={activePage} 
-      handlePage={handlePage} 
-      configuration={configuration} 
-      lyrics={lyrics} 
-      handleMenu={handleMenu} 
-      menuOpen={menuOpen} 
+        activepage={activePage} 
+        handlePage={handlePage} 
+        configuration={configuration} 
+        lyrics={lyrics} 
+        handleMenu={handleMenu} 
+        menuOpen={menuOpen} 
       />
       <Search activepage={activePage} handlePage={handlePage} lyrics={lyrics}   />
       <Num activepage={activePage} handlePage={handlePage}  />
       <Copyright activepage={activePage} handlePage={handlePage}  lyrics={lyrics}  />
+      <Footer activepage={activePage}  />
     </div>
   );
 }

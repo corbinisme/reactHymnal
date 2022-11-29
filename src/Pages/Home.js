@@ -16,7 +16,7 @@ export default function Home(props) {
     let back = props.handlePage;
 
     const currPage= useSelector((state) => state.page.value)
-    console.log(currPage, "page")
+
     return(
         <>
         {(active=="home"?
@@ -29,12 +29,12 @@ export default function Home(props) {
                 handlePage={back}
                 lyrics={props.lyrics} />
                 
-                <main>
+                <main className="pageContent">
 
                     <Lyrics lang={language} lyrics={props.lyrics} />
                 
                 </main>
-            <Footer />
+           
         </div>
         : <></>)}
         </>

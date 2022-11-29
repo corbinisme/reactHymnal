@@ -24,7 +24,7 @@ export function Hymn(props) {
     <div>
 
 
-        <div className="p-2">
+        <div>
             <select className="form-control" onChange={handleChange} value={hymnNum}>
             {titles && titles.map(item=> {
                 

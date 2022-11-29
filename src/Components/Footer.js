@@ -12,27 +12,35 @@ import React, { useState, useEffect } from 'react';
 function Footer(props){
 
     // is music playing state?
-
+    console.log("props footer", props)
 
     return (
         <footer className="footer p-2">
+
             <div className="row">
-                <div className="col">
-                    <div className="btn-group">
+
+                {(props.activepage=="home" ? 
+                    <>
+                    <div className="col">
+                        <div className="btn-group">
+                        
+                        
+                    <Playing />
+                    </div>
+                        
+                    
+                    </div>
+                    <div className="col text-center">
+                        
+                        <Music />
+                    </div>
+                    </>
+                : "")}
+                <div className="col text-end global-actions">
+                    <div className="text-end">
                     <Theme />
-                    
-                   <Playing />
-                   </div>
-                    
-                   
-                </div>
-                <div className="col text-center">
-                    
-                    <Music />
-                </div>
-                <div className="col text-end">
-                    
                     <FontSize />
+                    </div>
                 </div>
             </div>
         </footer>

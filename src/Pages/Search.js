@@ -66,7 +66,7 @@ function Search(props){
             } else if(searchType=="text"){
 
                     let highlightedSearchLyrics = theseSearchLyrics;
-                    console.log("lowerFilter", lowerFilter);
+  
                     let searchSplits = lowerFilter.split(" ");
                     highlightedSearchLyrics = highlightedSearchLyrics.replaceAll(";", " ");
                     highlightedSearchLyrics = highlightedSearchLyrics.replaceAll(".", " ");
@@ -126,60 +126,65 @@ function Search(props){
         setFilterText("")
     }
     
-   
+    const fontsize = useSelector((state) => state.fontsize.value)
     
     return <>
     
     {(active=="search"?
     <div className="page search">
-        
+       
         <header>
-            <nav className="navbar  navbar-light ">
-           
-           <div className='d-flex cols'>
-            <select className="searchType form-control" value={searchType} onChange={handleSearchTypeChange}>
-
-                <option value="title">Search by Title</option>
-                <option value="text">Full lyrics</option>
-                <option value="scripture">Scriptural Index</option>
-            </select>
-            </div>
-           
-
-            <div className="d-flex actionItems">
-
-                        <a href="#" 
-                        className="btn btn-outline-secondary float-end" 
-                        onClick={()=>back("home")}>
-                            <FontAwesomeIcon icon={faArrowLeft} /> 
-                        </a>
-            </div>
+            <div className="topHeader">
+                <nav className="navbar col  navbar-light ">
+                    <div className="container-fluid">
             
-               
-      
-               
+                    <div className='d-flex cols'>
+                        <select className="searchType form-control" value={searchType} onChange={handleSearchTypeChange}>
 
-            </nav>
-            <div className="input-group">
-                    <input type="text" 
-                            onChange={handleFilter}
-                            value={filterText} 
-                            className="form-control" 
-                            name="searchtitles" />
-                    <button 
-                        onClick={clearFilter}
-                        className="input-group-addon btn btn-outline-secondary">
-                        <FontAwesomeIcon icon={faTimes} /> 
-                    </button>
+                            <option value="title">Search by Title</option>
+                            <option value="text">Full lyrics</option>
+                            <option value="scripture">Scriptural Index</option>
+                        </select>
+                    </div>
+
+                    <span className="navbar-brand">Search</span> 
+                
+
+                    <div className="d-flex actionItems">
+
+                                <a href="#" 
+                                className="btn btn-outline-secondary float-end" 
+                                onClick={()=>back("home")}>
+                                    <FontAwesomeIcon icon={faArrowLeft} /> 
+                                </a>
+                    </div>
+                    </div>
+                
+                </nav>
+            </div>
+            <div className="bottomHeader">
+                <div className="input-group">
+                        <input type="text" 
+                                onChange={handleFilter}
+                                value={filterText} 
+                                className="form-control" 
+                                name="searchtitles" />
+                        <button 
+                            onClick={clearFilter}
+                            className="input-group-addon btn btn-outline-secondary">
+                            <FontAwesomeIcon icon={faTimes} /> 
+                        </button>
                 </div>
+            </div>
         </header>
         
-        <div className="pageContent">
+        <div className={`pageContent font_${fontsize}`}>
 
             <SearchList back={back} searchType={searchType} data={data} />
 
         
         </div>
+        
         
     </div>
      : <></>)}

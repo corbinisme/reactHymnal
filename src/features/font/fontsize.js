@@ -6,14 +6,13 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 
 export function FontSize() {
-  const count = useSelector((state) => state.fontsize.value)
+  const fontsize = useSelector((state) => state.fontsize.value)
   const dispatch = useDispatch()
 
   return (
-    <div>
-      <div className="btn-group">
-       
-        
+    <>
+      <div className="btn-group" data-font-size={fontsize}>
+
         <button
             className="btn btn-outline-secondary"
           aria-label="Decrement value"
@@ -30,6 +29,6 @@ export function FontSize() {
           <FontAwesomeIcon icon={faPlus} /> 
         </button>
       </div>
-    </div>
+    </>
   )
 }

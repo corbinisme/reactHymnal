@@ -33,44 +33,51 @@ function Num(props){
         // current property is refered to input element
         if(active=="num"){
           searchInput.current.focus();
-          console.log("num page454")
+
         }
      },[active])
+
+     const fontsize = useSelector((state) => state.fontsize.value)
 
     return <>
     
     {(active=="num"?
     <div className="page num">
-        <div className="p-4">
+        
 
         <header>
-                <div className="row topHeader">
-              <div className="col">
-                <h2>Number</h2> 
-              </div>
-              
-              <div className="col">
-                        
+            <div className="topHeader">
+              <nav className="navbar col  navbar-light ">
+                  <div className="container-fluid">
+                      <div className='d-flex'>
+                      <span className="navbar-brand">Number</span> 
+                      </div>
+                      <div className="d-flex actionItems">
                         <a href="#" 
-                            className="btn btn-outline-secondary float-end" 
-                            onClick={()=>back("home")}>
-                                <FontAwesomeIcon icon={faArrowLeft} /> 
-                            </a>
-                        </div>
-          </div>
+                          className="btn btn-outline-secondary float-end" 
+                          onClick={()=>back("home")}>
+                            <FontAwesomeIcon icon={faArrowLeft} /> 
+                        </a>
+                      </div>
+                  </div>
+              </nav>
+            </div>
+              
+            <div className="bottomHeader">
+              <form onSubmit={handleSubmit}>
+                <div className="input-group">
+                    
+                    <input type="number" name="number" ref={searchInput} placeholder={hymnNum} className="form-control" />
+                    <input type="submit" value="Go" className="input-group-addon btn btn-primary" />
+                  
+                </div>
+                </form>
+            </div>
         
         </header>
-        <div className="pageContent">
-        
-        <form onSubmit={handleSubmit}>
-        <div className="input-group mt-4">
-            
-            <input type="number" name="number" ref={searchInput} placeholder={hymnNum} className="form-control" />
-            <input type="submit" value="Go" className="input-group-addon btn btn-primary" />
-           
-        </div>
-        </form>
-        </div>
+        <div className={`pageContent font_${fontsize}`}>
+          Num
+     
         </div>
 
     </div>
