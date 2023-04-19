@@ -33,11 +33,11 @@ function LoadVideoJS(props) {
   };
 
   return (
-    <div className="videoJS-player">
+    <>
       
       <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
       
-    </div>
+    </>
   );
 }
 export default LoadVideoJS;
