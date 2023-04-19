@@ -21,6 +21,7 @@
     "reactstrap": "^9.1.5",
     "sass": "^1.54.7",
     "styled-components": "^5.3.6",
+    "video.js": "^8.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

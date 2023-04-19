@@ -11,6 +11,7 @@ import React, { useState, useEffect } from 'react';
 
 function Footer(props){
 
+    const activePage ="home";
     // is music playing state?
     console.log("props footer", props)
 
@@ -19,7 +20,7 @@ function Footer(props){
 
             <div className="row">
 
-                {(props.activepage=="home" ? 
+                
                     <>
                     <div className="col">
                         <div className="btn-group">
@@ -35,7 +36,7 @@ function Footer(props){
                         <Music />
                     </div>
                     </>
-                : "")}
+                
                 <div className="col text-end global-actions">
                     <div className="text-end">
                     <Theme />

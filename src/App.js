@@ -48,7 +48,7 @@ function App() {
       <Search activepage={activePage} handlePage={handlePage} lyrics={lyrics}   />
       <Num activepage={activePage} handlePage={handlePage}  />
       <Copyright activepage={activePage} handlePage={handlePage}  lyrics={lyrics}  />
-      <Footer activepage={activePage}  />
+      
     </div>
   );
 }

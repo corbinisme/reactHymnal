@@ -34,8 +34,9 @@ export default function Home(props) {
                     <Lyrics lang={language} lyrics={props.lyrics} />
                 
                 </main>
-           
+                <Footer activepage={active}  />
         </div>
+        
         : <></>)}
         </>
         

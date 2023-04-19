@@ -1,6 +1,4 @@
-import ReactPlayer from "react-player";
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+import LoadVideoJS from "./LoadVideoJS";
 import { useSelector, useDispatch } from 'react-redux'
 import config from '../Data/config';
 
@@ -24,18 +22,14 @@ function Music(props){
     
 
     return (<div className='player-wrapper d-flex'>
+
+
         
             {((isPlayingPiano==true||isPlayingVocal==true)?
             <>
-            <AudioPlayer
-                autoPlay
-                src={loadPath}
-                onPlay={e => console.log("onPlay")}
-                onPlayError={e => console.log("error", e)}
-                // other props here
-            />
 
-       
+                <LoadVideoJS url={loadPath} />
+          
             </>
             :"")}
         
