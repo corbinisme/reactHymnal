@@ -9,6 +9,7 @@ export function Language(props) {
   const handleMenu = props.handleMenu;
   const langs = props.langs;
   const config = props.config;
+  const back = props.handlePage;
 
   const handleChange = function(e) {
     //console.log('Label 👉️', event.target.selectedOptions[0].label);
@@ -33,6 +34,14 @@ export function Language(props) {
             )
 
         })}
+        <li className="copyright">
+
+          <a className={`nav-link`}  href="#" onClick={()=>back("copyright")}>
+
+            <span>Copyright Information</span>
+          </a>
+
+        </li>
     </>
   )
 }

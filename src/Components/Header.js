@@ -58,14 +58,14 @@ function Header(props) {
                     <span className="navbar-brand">
                         {title}
                     </span>
-                    <Button onClick={()=>back("copyright")} className="btn-outline-secondary">?</Button>
+                    
                 </div>
                 
                 
                 <div className={`collapse navbar-collapse ${menuOpenClass}`} id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto">
 
-                        <Language handleMenu={handleMenu} config={config} langs={langs} />
+                        <Language handleMenu={handleMenu} config={config} handlePage={back} langs={langs} />
 
                     </ul>
                 

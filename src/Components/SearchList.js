@@ -19,34 +19,32 @@ function SearchList(props){
 
             <table className='dataTable table table-bordered'>
             <tbody>
-                {(props.searchType=="scripture"? <>
-                    <tr>
-                        <td>scripture list</td>
-                    </tr>
-                </>: <>
+                
                     {(props.data.length>0? props.data.map((ly)=>{
+                        
+                       
                         
                         return (
                             <tr key={ly.num}>
-                                {(props.searchType=="title"? <>
-                                    <td>{ly.num}</td>
-                                    <td>
-                                        <a href="#" 
-                                        data-hymn={ly.num}
-                                        onClick={handleHymnSelect}>{ly.title}
-                                        </a>
-                                    </td>
-                                </>: (props.searchType=="text"? <>
-                                    <td>{ly.num}</td>
-                                    <td><span className="badge bg-info">{ly.title}</span><br />
-                                    
-                                        <span dangerouslySetInnerHTML={{__html: ly.lyrics}}></span>
-                                    </td>
-                                </>: <tr><td>No results</td></tr>))}
+                                
+                                <td>{ly.num}</td>
+                                <td>
+                                <a href="#" 
+                                className="btn btn-sm btn-outline-secondary"
+                                    data-hymn={ly.num}
+                                    onClick={handleHymnSelect}
+                                    dangerouslySetInnerHTML={{__html: ly.title}}>
+                                        
+                                        
+                                    </a>
+                                    <br />
+                                    <code dangerouslySetInnerHTML={{__html: ly.preview}}></code><br />
+                                    <span  dangerouslySetInnerHTML={{__html: ly.lyrics}}></span>
+                                </td>                            
                             </tr>
                         )
                     }): <tr><td>No results</td></tr>)}
-                    </>)}
+                    
                     </tbody>
                 </table>
                 </div>

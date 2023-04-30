@@ -49,7 +49,7 @@ function Copyright(props){
             <nav className="navbar col  navbar-light ">
                   <div className="container-fluid">
                       <div className='d-flex'>
-                      <span className="navbar-brand">Number</span> 
+                      <span className="navbar-brand">Copyright</span> 
                       </div>
                       <div className="d-flex actionItems">
                         <Button

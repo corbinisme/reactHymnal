@@ -224,6 +224,21 @@
   visibility: hidden;
 }
 
+.home footer .col {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.home footer .col.text-center {
+  flex: 1 99%;
+}
+.home .footer .row {
+  flex-wrap: nowrap;
+}
+.home .footer .global-actions>div {
+  flex-wrap: nowrap;
+  display: flex;
+}
+
 .App .page header {
   height: var(--pageHeight);
   position: fixed;
@@ -260,46 +275,46 @@
 
 }
 
-.font_1 {
+.font_1 .pageContent {
   font-size: 0.6em;
 }
-.font_2 {
+.font_2 .pageContent{
   font-size: 0.8em;
 }
-.font_3 {
+.font_3 .pageContent{
   font-size: 1em;
 }
-.font_4 {
+.font_4 .pageContent{
   font-size: 1.2rem;
 }
-.font_5 {
+.font_5 .pageContent{
   font-size: 1.4em;
 }
-.font_6 {
+.font_6 .pageContent{
   font-size: 1.6em;
 }
-.font_7 {
+.font_7 .pageContent{
   font-size: 1.8em;
 }
-.font_8 {
+.font_8 .pageContent{
   font-size: 2em;
 }
-.font_9 {
+.font_9 .pageContent{
   font-size: 2.2em;
 }
-.font_10 {
+.font_10 .pageContent{
   font-size: 2.4em;
 }
-.font_11 {
+.font_11 .pageContent{
   font-size: 2.6em;
 }
-.font_12 {
+.font_12 .pageContent{
   font-size: 2.8em;
 }
-.font_13 {
+.font_13 .pageContent{
   font-size: 3em;
 }
-.font_14 {
+.font_14 .pageContent{
   font-size: 3.2em;
 }
 
@@ -315,15 +330,51 @@
   width: 100%;
   height: 100%;
 }
-.video-js {
+.home .video-js {
   height: 50px!important;
   width: 100%!important;
   padding-top: 0px!important;
   position: relative;
   top: -4px;
   z-index: 645;
+  background-color: transparent;
+  color: var(--text-color);
 }
-
+.home .video-js .vjs-fullscreen-control {
+  display: none;
+}
+.home .video-js .vjs-volume-panel {
+  display: none;
+}
+.home .video-js  .vjs-playback-rate  {
+  display: block!important;
+}
+.home .video-js .vjs-control-bar {
+  background: transparent;
+}
+.home .video-js .vjs-progress-control {
+  position: fixed;
+  top: 109px;
+  height: 10px;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+}
+.home .video-js .vjs-progress-control .vjs-progress-holder {
+  height: 10px;
+  margin: 0;
+}
+.home .video-js .vjs-play-progress {
+  background: #333;
+}
+.home .vjs-user-inactive {
+  display: block;
+  visibility: visible;
+  opacity: .9;
+}
+.home .vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+  opacity: 1;
+}
 .react-player {
   position: absolute;
   top: 0;

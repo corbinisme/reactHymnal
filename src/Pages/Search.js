@@ -20,15 +20,93 @@ function Search(props){
     const searchTypes = ["title", "text", "scripture"]
     const [searchType, setSearchType] = useState("title");
 
-    const [filterText, setFilterText] = useState(' ');
+    const [filterText, setFilterText] = useState('');
     const [data, setData] = useState([]);
 
     const title = "Search";
-    
+    const getHymnTitle = function(el){
+        let num = el.substring(0, el.indexOf(")"));
+        let title = el.substring(el.indexOf(")")+1, el.length);
+
+        let displayHymnNum = num;
+        let numParse = parseInt(num);
+        if(numParse < 100) {
+            displayHymnNum = "0" + displayHymnNum;
+        }
+        if(numParse < 10) {
+            displayHymnNum = "0" + displayHymnNum;
+        }
+
+        let hymnNum = "hymn" + displayHymnNum;
+        return {
+            num: num,
+            title: title,
+            displayHymnNum: displayHymnNum
+        }
+            
+    }
 
     useEffect(()=>{
         // current property is refered to input element
         let tempData = [];
+
+        if(filterText!=null && filterText!="" && filterText!=" "){
+            let langLyrics = lyrics.lyrics[language]
+            titles.forEach(function(el){
+                
+                let nums = getHymnTitle(el);
+                
+                let lowerFilter = filterText.toLowerCase();
+                let hymnNum = "hymn" + nums.displayHymnNum;
+
+                let theseLyrics = langLyrics[hymnNum];
+                theseLyrics = theseLyrics.substring(theseLyrics.indexOf("</h1>")+5);
+
+                if(theseLyrics.toLowerCase().indexOf(lowerFilter)>-1 || 
+                    title.toLowerCase().indexOf(lowerFilter)>-1){
+           
+                    var dom = new DOMParser().parseFromString(theseLyrics, 'text/html');
+                    let theseSearchLyrics = dom.body.textContent;
+                    const regex = new RegExp(filterText, "gi");
+                    const lyricsWithHighlights = theseSearchLyrics.replace(
+                        regex,
+                        match => `<mark class="highlight">${match}</mark>`
+                    );
+                    let title = nums.title;
+                    const titleWithHighlights = title.replace(
+                        regex,
+                        match => `<mark class="highlight">${match}</mark>`
+                    );
+
+                    // get just  preview?
+                    const index = lyricsWithHighlights.toLowerCase().indexOf(filterText.toLowerCase())-45;
+                    const start = index > 15 ? index - 15 : 0;
+                    const end = index + filterText.length + 95;
+                    const preview = "..." + lyricsWithHighlights.substring(start, end) + "...";
+                    
+                    let temp = {
+                        num: nums.num,
+                        title: titleWithHighlights,
+                        lyrics: lyricsWithHighlights,
+                        preview: preview
+                    }
+                    tempData.push(temp);
+                
+                    }
+            })
+
+  
+        } else {
+
+
+           
+        }
+
+        /*
+        
+        
+     
+
         titles.forEach(function(el){
             let num = el.substring(0, el.indexOf(")"));
             let title = el.substring(el.indexOf(")")+1, el.length);
@@ -50,7 +128,18 @@ function Search(props){
             var dom = new DOMParser().parseFromString(theseLyrics, 'text/html');
             let theseSearchLyrics = dom.body.textContent;
 
-            if(searchType=="title"){
+
+
+            let temp = {
+                num: num,
+                title: title,
+                lyrics: highlightedSearchLyrics
+            }
+            tempData.push(temp);
+
+            /*
+
+            if(searchType=="title2"){
                 if(
                     title.toLowerCase().indexOf(lowerFilter)>-1|| 
                     lowerFilter==""|| 
@@ -63,7 +152,7 @@ function Search(props){
                     }
                     tempData.push(temp);
                 }
-            } else if(searchType=="text"){
+            } else if(searchType=="text" || searchType=="title"){
 
                     let highlightedSearchLyrics = theseSearchLyrics;
   
@@ -102,8 +191,12 @@ function Search(props){
                     
                     
                 }
-            }
+           
+    
         })
+         }
+            */
+        
 
         setData(tempData);
      },[filterText])
@@ -138,14 +231,7 @@ function Search(props){
                 <nav className="navbar col  navbar-light ">
                     <div className="container-fluid">
             
-                    <div className='d-flex cols'>
-                        <select className="searchType form-control" value={searchType} onChange={handleSearchTypeChange}>
-
-                            <option value="title">Search by Title</option>
-                            <option value="text">Full lyrics</option>
-                            <option value="scripture">Scriptural Index</option>
-                        </select>
-                    </div>
+                   
 
                     <span className="navbar-brand">Search</span> 
                 
@@ -180,7 +266,7 @@ function Search(props){
         
         <div className={`pageContent font_${fontsize}`}>
 
-            <SearchList back={back} searchType={searchType} data={data} />
+            <SearchList back={back} filter={filterText} searchType={searchType} data={data} />
 
         
         </div>

@@ -11,6 +11,7 @@ function LoadVideoJS(props) {
     autoplay: false,
     controls: true,
     responsive: true,
+    "inactivityTimeout": 0,
     playbackRates: [0.6, 0.7, 0.8, 0.9, 1, 1.2, 1.3, 1.4, 1.5, 2],
     fluid: true,
     sources: [{

@@ -16,7 +16,12 @@ function Lyrics(props){
     }
     const thisHymn = (lyrics? lyrics["hymn"+ hymnDigit]: null);
 
-    const fontsize = useSelector((state) => state.fontsize.value)
+    const fontsize = useSelector((state) => state.fontsize.value);
+
+    document.body.classList.forEach(el=>{
+        document.body.classList.remove(el);
+    })
+    document.body.classList.add(`font_${fontsize}`)
     return(
         <div className={`lyrics font_${fontsize}`}>
     
