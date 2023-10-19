@@ -30,16 +30,15 @@ function SearchList(props){
                                 <td>{ly.num}</td>
                                 <td>
                                 <a href="#" 
-                                className="btn btn-sm btn-outline-secondary"
+                                className="d-block"
                                     data-hymn={ly.num}
                                     onClick={handleHymnSelect}
                                     dangerouslySetInnerHTML={{__html: ly.title}}>
                                         
                                         
                                     </a>
-                                    <br />
-                                    <code dangerouslySetInnerHTML={{__html: ly.preview}}></code><br />
-                                    <span  dangerouslySetInnerHTML={{__html: ly.lyrics}}></span>
+                                
+                                    <small  dangerouslySetInnerHTML={{__html: ly.preview}}></small>
                                 </td>                            
                             </tr>
                         )

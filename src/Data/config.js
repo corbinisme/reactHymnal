@@ -12,6 +12,7 @@ const config = {
 	},
 	icon: "icon.png",
 	path: "https://ucgweb.s3.amazonaws.com/files/ucg-hymnal-app-v2/mp3/",
-	vocal_path: "https://ucgweb.s3.amazonaws.com/files/ucg-hymnal-app-v2/hymns-vocal/"
+	vocal_path: "https://ucgweb.s3.amazonaws.com/files/ucg-hymnal-app-v2/hymns-vocal/",
+	pdfPath: "https://ucgweb.s3.amazonaws.com/files/ucg-hymnal-app-v2/pdf/"
 }
 export default config;

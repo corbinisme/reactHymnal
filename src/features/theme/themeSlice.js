@@ -19,6 +19,7 @@ export const themeSlice = createSlice({
     setTheme: (state, action) => {
       console.log(action)
       state.value = action.payload;
+      document.querySelector("html").setAttribute("data-theme",action.payload)
     }
   },
 })

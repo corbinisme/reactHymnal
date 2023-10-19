@@ -4,25 +4,35 @@
   --text-color: black;  
   --footer-bg-grad-stop: #eee;
   --navbarBG: "url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 0.55%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e)";
-  --hymnSelectBGStart: #6facd5;
-  --hymnSelectBGStop: #497bae;
-  --headerBG: #eee;
+  --hymnSelectBGStart: #0d6efd;
+  --headerText: #fff;
+  --headerBG: #222;
   --headerBorder: #122e4a;
   --pageHeight: 115px;
 }
 
-.App[data-theme="dark"] {
+html[data-theme="dark"] {
   /* Variables for dark mode */
   --background-color: black;
   --text-color: white;   
   --footer-bg-grad-stop: #111;
   --navbarBG: "url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%255, 255, 255, 0.55%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e)";
   --hymnSelectBGStart: #333;
-  --hymnSelectBGStop: #333;
+  --headerText: #fff;
   --headerBG: #222;
   --headerBorder: #000;
 }
 
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('font/notosans-regular.ttf') format('truetype'),
+       url('font/notosans-regular-webfont.woff') format('woff'),
+       url('font/notosans-regular-webfont.woff2') format('woff2');
+
+}
+body {
+  font-family: 'Noto-sans', sans-serif!important;
+}
 .App .btn {
   background-color: var(--background-color);
 }
@@ -31,6 +41,7 @@
   background-color: var(--background-color);
   color: var(--text-color);
   transition: all ease 0.3s;
+  
 }
 
 .App .page.home main {
@@ -40,17 +51,24 @@
 
 .App .navbar {
   background-color: var(--headerBG);
-  color: var(--text-color);
+  color: var(--headerText);
   border-bottom: 1px solid var(--headerBorder);
 }
+
 .App .page header .navbar li a {
-  color: var(--text-color);
+  color: #fff;
+  background-color: transparent;
 }
+.App .actionItems .btn, .App .navbar-toggler {
+  background-color: transparent;
+  color: #fff;
+}
+
 .App .page header .navbar .navbar-brand {
-  color: var(--text-color);
+  color: var(--headerText);
 }
 .App .page header .bottomHeader {
-  background-image: linear-gradient(var(--hymnSelectBGStart),var(--hymnSelectBGStop));
+  background-color: var(--hymnSelectBGStart);
   border-bottom: 1px solid var(--headerBorder);
 }
 .App .page .form-control,
@@ -92,7 +110,7 @@
 
 }
 .App .navbar-toggler-icon {
-  color: var(--text-color);
+  color: #fff;
   background-image: var(--navbarBG);
   font-size: 26px;
   height: 34px;
@@ -123,7 +141,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#75ffffff',endColorstr='#e8ffffff',GradientType=0);
 
 }
-.App[data-theme="dark"]  .footer {
+html[data-theme="dark"] .App  .footer {
   background: #222;
     background: -moz-linear-gradient(top,rgba(000,000,000,0.46) 0,rgba(000,000,000,0.91) 60%,rgba(000,000,000,0.91) 97%);
     background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(000,000,000,0.46)),color-stop(60%,rgba(000,000,000,0.91)),color-stop(97%,rgba(000,000,000,0.91)));
@@ -240,7 +258,7 @@
 }
 
 .App .page header {
-  height: var(--pageHeight);
+  
   position: fixed;
   padding: 0;
   width: 100%;

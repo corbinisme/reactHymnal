@@ -23,7 +23,7 @@ function Lyrics(props){
     })
     document.body.classList.add(`font_${fontsize}`)
     return(
-        <div className={`lyrics font_${fontsize}`}>
+        <div className={`lyrics`}>
     
             <div dangerouslySetInnerHTML={{__html: thisHymn}}></div>
            

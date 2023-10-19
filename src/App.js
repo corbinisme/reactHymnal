@@ -19,8 +19,9 @@ function App() {
   const [lyrics, setLyrics] = useState(languages);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activePage, setActivePage] = useState("home");
-  const thisTheme= useSelector((state) => state.theme.value)
-
+  const [theme, setTheme] = useState("dark");
+  //const thisTheme= useSelector((state) => state.theme.value)
+//const thisTheme = "dark"
   const handleMenu = function(){
     setMenuOpen(!menuOpen);
   }
@@ -29,13 +30,11 @@ function App() {
     setActivePage(page);
   }
 
-  const fontsize = useSelector((state) => state.fontsize.value)
-  
   console.log("bible", bible)
 
 
   return (
-    <div className={`App ${thisTheme}`} data-theme={thisTheme}>
+    <div className={`App`}>
       
       <Home 
         activepage={activePage} 
