@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/reactHymnal/static/css/main.b39e969d.css",
+    "main.js": "/reactHymnal/static/js/main.4051afbc.js",
+    "static/js/511.350b6ba7.chunk.js": "/reactHymnal/static/js/511.350b6ba7.chunk.js",
+    "static/media/notosans-regular.ttf": "/reactHymnal/static/media/notosans-regular.c6776e8228bee1ff1106.ttf",
+    "static/media/notosans-regular-webfont.woff": "/reactHymnal/static/media/notosans-regular-webfont.f725f0d179abefde98fe.woff",
+    "static/media/notosans-regular-webfont.woff2": "/reactHymnal/static/media/notosans-regular-webfont.2289f42ab26f59a76f41.woff2",
+    "static/media/logo.svg": "/reactHymnal/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/reactHymnal/index.html",
+    "main.b39e969d.css.map": "/reactHymnal/static/css/main.b39e969d.css.map",
+    "main.4051afbc.js.map": "/reactHymnal/static/js/main.4051afbc.js.map",
+    "511.350b6ba7.chunk.js.map": "/reactHymnal/static/js/511.350b6ba7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b39e969d.css",
+    "static/js/main.4051afbc.js"
+  ]
+}
